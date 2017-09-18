@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-module.exports = {
+const debug = true;
+const config = {
     entry: {
         bundle: [
-            "./src/index.js"
+            "./src/index.jsx"
         ]
     },
     output: {
@@ -18,7 +18,7 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, "public"),
         host: "0.0.0.0",
-        port: 8000,
+        port: 9000,
         inline: true,
         hot: true,        
     },
@@ -28,6 +28,23 @@ module.exports = {
                 test:    /\.(js|jsx)$/,
                 use:     ["babel-loader"],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css/,
+                loaders: [
+                        'style-loader',
+                        `css-loader?${JSON.stringify({
+                            sourceMap: debug,
+                            modules: true,
+                            localIdentName: debug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
+                            minimize: !debug,
+                        })}`,
+                        'postcss-loader',
+                ],
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)(\?.*)$/,
+                loader: 'url-loader?limit=10000'
             }
         ]
     },
@@ -44,3 +61,22 @@ module.exports = {
     ],
     devtool: "source-map"
 }
+
+if (!debug) {
+    config.plugins.push(new webpack.optimize.DedupePlugin());
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            screw_ie8: true,
+            warnings: verbose,
+        },
+        mangle: {
+            screw_ie8: true,
+        },
+        output: {
+            comments: false,
+            screw_ie8: true,
+        },
+    }));
+    config.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
+}
+module.exports = config;
