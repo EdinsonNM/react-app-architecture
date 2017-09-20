@@ -1,5 +1,5 @@
 {
-  "name": "Boilerplate project configuration",
+  "name": "react-project-config",
   "version": "1.0.0",
   "description": "Initial configuration for new react projects",
   "main": "index.js",
