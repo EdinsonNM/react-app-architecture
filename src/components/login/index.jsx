@@ -1,6 +1,8 @@
-import logincss from './style.css';
+// import logincss from './style.css';
 import React from 'react';
-export class Login extends React.Component {
+
+/*
+export default class Login extends React.Component {
     render (){
         return(
             <div className="login">
@@ -9,3 +11,8 @@ export class Login extends React.Component {
         )
     }
 }
+*/
+
+const Login = () => <div className="login" />;
+
+export default Login;

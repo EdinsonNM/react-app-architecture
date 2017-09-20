@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route, Switch  } from 'react-router-dom';
-import {App} from './components/app';
+import { Route, Switch } from 'react-router-dom';
+import { App } from './components/app';
 
-export const routes = (
+const routes = (
     <Switch>
-      <Route exact={true} path="/login" component={App} />
-      <Route exact={true} path="/dashboard" component={App} />
+        <Route exact path="/login" component={App} />
+        <Route exact path="/dashboard" component={App} />
     </Switch>
 );
+
+export default routes;
