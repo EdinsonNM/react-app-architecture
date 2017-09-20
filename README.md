@@ -1,5 +1,5 @@
 # REACT-APP-ARCH with Redux
-Este proyecto tiene como finalidad proponer una estructura de proyecto inicial para dicversos proyectos desarrollados bajo React JS y Redux , considerando ademas buenas practicas con ESLINT.
+Este proyecto tiene como finalidad proponer una estructura de proyecto inicial para diversos proyectos desarrollados bajo React JS y Redux , considerando ademas buenas practicas con ESLINT.
 
 ## Requerimientos
 ````
