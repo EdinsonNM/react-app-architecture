@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const debug = true;
+var Dotenv = require("dotenv-webpack");
+
+const debug = (process.env.NODE_ENV !== 'production');
 const config = {
     entry: {
         bundle: [
@@ -57,7 +59,8 @@ const config = {
             chunks: ["bundle"],
             filename: "index.html",
             inject: "body"
-        })
+        }),
+        new Dotenv({ path: "./.env", safe: false })
     ],
     devtool: "source-map"
 }
