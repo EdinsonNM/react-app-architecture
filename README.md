@@ -7,7 +7,7 @@ TODO: por definir
 ````
 
 # Desarrollado por
-La estructurea de este proyecto ha sido desarrollada por:
+La estructura de este proyecto ha sido desarrollada por:
 
 <table>
   <tbody>
