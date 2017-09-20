@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-export class App extends React.Component{
+
+export default class App extends React.Component {
     static propTypes = {
-        title: PropTypes.string
+      title: PropTypes.string.isRequired
+    };
+
+    constructor() {
+      super();
+      this.state = {
+        x: 1
+      };
     }
-    constructor(){
-        super();
-    }
+
     render() {
-        return <div>My First App {this.props.title}</div>
+      return (
+        <div>My First App {this.props.title}</div>
+      );
     }
 }
