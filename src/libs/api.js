@@ -1,7 +1,6 @@
 import axios from 'axios';
-import {AuthToken} from './AuthToken';
+import axiosMiddleware from 'redux-axios-middleware';
 
-const API_ROOT = 'https://api.github.com/'
 const api = axios.create({
   baseURL: process.env.URL_SERVER,
   headers: {'Content-Type': 'application/json'}
@@ -24,12 +23,6 @@ api.interceptors.response.use((response) => {
     return Promise.reject(error);
 });
 
-
-let store = createStore(
-  reducers, //custom reducers
-  applyMiddleware(
-    axiosMiddleware(api), //second parameter options can optionally contain onSuccess, onError, onComplete, successSuffix, errorSuffix
-  )
-)
-
-export default api;
+// axios middleware
+export const AxiosMiddleware = axiosMiddleware(api)
+export const Api = api;

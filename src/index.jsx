@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './components/app';
-import {createStore} from 'redux';
+import { Provider } from 'react-redux';
+import { HashRouter as Router } from 'react-router-dom';
+import { routes } from './routes';
+import store from './store';
+
 import './index.css';
 
-
-ReactDOM.render(<App title="Edinson"/>,document.querySelector('#root'));
+ReactDOM.render( 
+    <Provider store={store}>
+        <Router>
+            {routes}
+        </Router>
+    </Provider>,
+document.querySelector('#root'));
