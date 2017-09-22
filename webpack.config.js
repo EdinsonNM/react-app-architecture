@@ -1,47 +1,47 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-var Dotenv = require("dotenv-webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const debug = (process.env.NODE_ENV !== 'production');
 const config = {
     entry: {
         bundle: [
-            "./src/index.jsx"
+            './src/index.jsx'
         ]
     },
     output: {
-        path: path.resolve(__dirname, "build"),
-        filename: "[name].js"
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].js'
     },
     resolve: {
-        extensions: [".jsx", ".js"]
+        extensions: ['.jsx', '.js']
     },
     devServer: {
-        contentBase: path.resolve(__dirname, "public"),
-        host: "0.0.0.0",
+        contentBase: path.resolve(__dirname, 'public'),
+        host: '0.0.0.0',
         port: 9000,
         inline: true,
-        hot: true,        
+        hot: true,
     },
     module: {
         loaders: [
             {
-                test:    /\.(js|jsx)$/,
-                use:     ["babel-loader"],
+                test: /\.(js|jsx)$/,
+                use: ['babel-loader'],
                 exclude: /node_modules/
             },
             {
                 test: /\.css/,
                 loaders: [
-                        'style-loader',
-                        `css-loader?${JSON.stringify({
-                            sourceMap: debug,
-                            modules: true,
-                            localIdentName: debug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
-                            minimize: !debug,
-                        })}`,
-                        'postcss-loader',
+                    'style-loader',
+                    `css-loader?${JSON.stringify({
+                        sourceMap: debug,
+                        modules: true,
+                        localIdentName: debug ? '[name]_[local]_[hash:base64:3]' : '[hash:base64:4]',
+                        minimize: !debug,
+                    })}`,
+                    'postcss-loader',
                 ],
             },
             {
@@ -54,16 +54,16 @@ const config = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "public/index.html"),
+            template: path.resolve(__dirname, 'public/index.html'),
             hash: true,
-            chunks: ["bundle"],
-            filename: "index.html",
-            inject: "body"
+            chunks: ['bundle'],
+            filename: 'index.html',
+            inject: 'body'
         }),
-        new Dotenv({ path: "./.env", safe: false })
+        new Dotenv({ path: './.env', safe: false })
     ],
-    devtool: "source-map"
-}
+    devtool: 'source-map'
+};
 
 if (!debug) {
     config.plugins.push(new webpack.optimize.DedupePlugin());
