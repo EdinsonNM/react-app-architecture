@@ -1,11 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Login } from './login';
 
 export default class App extends React.Component {
+    /*
     static propTypes = {
         title: PropTypes.string.isRequired
     };
-
+    */
     constructor() {
         super();
         this.state = {
@@ -15,7 +17,9 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>My First App {this.props.title}</div>
+            <div>
+                My First App
+            </div>
         );
     }
 }

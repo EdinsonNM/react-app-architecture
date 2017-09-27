@@ -27,7 +27,8 @@
         "no-multiple-empty-lines": "error",
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "quote-props": ["error", "as-needed"],
-        "sort-vars": ["error", { "ignoreCase": true }]        
+        "sort-vars": ["error", { "ignoreCase": true }],
+        "react/prefer-stateless-function": [true, { "ignorePureComponents": true }]     
     },
     "settings": {
         "react": {
