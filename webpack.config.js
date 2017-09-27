@@ -63,7 +63,7 @@ const config = {
         new Dotenv({ path: './.env', safe: false })
     ],
     devtool: 'source-map'
-}
+};
 
 if (!debug) {
     config.plugins.push(new webpack.optimize.DedupePlugin());

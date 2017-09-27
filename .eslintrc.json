@@ -21,6 +21,7 @@
         "react/jsx-indent": ["error", 4],
         "comma-dangle": 0,
         "eol-last": ["error", "always"],
+        "linebreak-style":  ["error", "windows"],
         "padded-blocks": ["error", "never"],
         "no-irregular-whitespace": ["error", { "skipComments": true }],
         "no-trailing-spaces": "error",
