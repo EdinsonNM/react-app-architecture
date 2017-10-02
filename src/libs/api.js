@@ -16,11 +16,8 @@ api.interceptors.request.use((config) => {
 }, error => Promise.reject(error));
 
 // Add a response interceptor
-api.interceptors.response.use((response) => {
-    // const { data, headers } = response;
-    return response;
-}, error => Promise.reject(error));
+api.interceptors.response.use(response => response, error => Promise.reject(error));
 
 // axios middleware
-export const AxiosMiddleware = axiosMiddleware(api)
+export const AxiosMiddleware = axiosMiddleware(api);
 export const Api = api;
