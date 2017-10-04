@@ -6,13 +6,13 @@ import reducer from './reducer';
 
 const getMiddleware = () => {
     if (process.env.NODE_ENV === 'production') {
-        return applyMiddleware(AxiosMiddleware);
+        return applyMiddleware(AxiosMiddleware, createLogger());
     }
 
     // Enable additional logging in non-production environments.
-    return applyMiddleware(AxiosMiddleware, createLogger())
+    return applyMiddleware(AxiosMiddleware, createLogger());
 };
 
-const store = createStore(reducer, composeWithDevTools(getMiddleware()))
+const store = createStore(reducer, composeWithDevTools(getMiddleware()));
 
 export default store;

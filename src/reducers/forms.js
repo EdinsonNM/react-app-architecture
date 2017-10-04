@@ -8,10 +8,8 @@ export default (state = {}, action) => {
             return {
                 ...state,
                 [action.data.id]: action.data.value
-            }
+            };
         default:
             return state;
     }
-
-    return state;
 };

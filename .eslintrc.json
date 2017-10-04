@@ -28,7 +28,7 @@
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "quote-props": ["error", "as-needed"],
         "sort-vars": ["error", { "ignoreCase": true }],
-        "react/prefer-stateless-function": [true, { "ignorePureComponents": true }]     
+        "react/prefer-stateless-function": [1, { "ignorePureComponents": true }]     
     },
     "settings": {
         "react": {
