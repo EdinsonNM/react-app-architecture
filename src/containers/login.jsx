@@ -6,28 +6,32 @@ import { changeInput } from '../actions/forms';
 
 const Login = props =>
     (
-        <div>
+        <div className="row">
             <input id="username" type="text" value={props.username} onChange={props.onChange} />
             <input id="password" type="text" value={props.password} onChange={props.onChange} />
-            <button onClick={props.handleSubmit}>HOLA</button>
+            { (props.inProgress) ? <div>In progress..</div> : null }
+            <button className="btn btn-primary" onClick={props.handleSubmit}>HOLA</button>
         </div>
     );
 
 Login.propTypes = {
+    inProgress: propTypes.bool,
     username: propTypes.string,
     password: propTypes.string,
-    onChange: null,
-    handleSubmit: null
+    onChange: propTypes.func,
+    handleSubmit: propTypes.func
 };
 Login.defaultProps = {
+    inProgress: false,
     username: '',
     password: '',
     onChange: null,
     handleSubmit: null
 };
 const mapStateToProps = state => ({
-    username: state.username,
-    password: state.password
+    username: state.forms.username,
+    password: state.forms.password,
+    inProgress: state.auth.inProgress
 });
 const mapDispatchToProps = (dispatch, props) => ({
     handleSubmit: () => {
