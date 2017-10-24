@@ -28,7 +28,8 @@
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "quote-props": ["error", "as-needed"],
         "sort-vars": ["error", { "ignoreCase": true }],
-        "react/prefer-stateless-function": [1, { "ignorePureComponents": true }]     
+        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+        "react/jsx-indent-props": [0, "tab"]             
     },
     "settings": {
         "react": {

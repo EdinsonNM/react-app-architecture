@@ -1,11 +1,11 @@
-import { FORM_UPDATE_INPUT_ACTION } from '../constants/actionTypes';
+import { FORM_ACTIONS } from '../constants/actionTypes';
 
 export const changeInput = e => ({
-    type: FORM_UPDATE_INPUT_ACTION,
+    type: FORM_ACTIONS.UPDATE_INPUT_ACTION,
     data: e.target
 });
 
 export const changeSelect = e => ({
-    type: FORM_UPDATE_INPUT_ACTION,
+    type: FORM_ACTIONS.UPDATE_INPUT_ACTION,
     data: e.target
 });

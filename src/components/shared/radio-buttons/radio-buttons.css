@@ -1,0 +1,21 @@
+@import url('../../../styles/core.css');
+
+.radioButton {
+    border: 1.5px solid #8f8f8f;
+    color: #8f8f8f;
+    margin-right: 15px;
+    box-shadow: var(--box-shadow-gray);
+}
+
+.radioButton:last-child {
+    margin-right: 0;
+}
+
+.radioButton_active {
+    border: 2px solid var(--color-pacifico-blue1);
+}
+
+.radioButton__errorLabel {
+    width: 100%;
+    color: red;
+}

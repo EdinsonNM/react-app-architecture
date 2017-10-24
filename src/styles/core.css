@@ -4,12 +4,5 @@
     --color-pacifico-blue3: #00375E;
     --color-pacifico-blue4: #DEF5FD;
 
-    --body-style:{
-        font-family: Foco;
-    }
-    
-}
-body{
-    background-color: var(--color-pacifico-blue1);
-    @apply --body-style;
+    --box-shadow-gray: 0 2px 3px rgba(0, 0, 0, .15);
 }

@@ -1,0 +1,19 @@
+.textBox__label {
+    color: #808080;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 0 0px;
+}
+
+.textBox__errorLabel {
+    width: 100%;
+    color: red;
+}
+
+.textBox__text {
+    width: 150px;
+    height: 33px;
+    padding: 5px 8px;
+    margin: 5px 0;
+}

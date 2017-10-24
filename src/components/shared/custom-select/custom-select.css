@@ -1,0 +1,19 @@
+.customSelect__label {
+    color: #808080;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 0 0px;
+}
+
+.customSelect__errorLabel {
+    width: 100%;
+    color: red;
+}
+
+.customSelect__select {
+    width: 150px;
+    height: 33px !important;
+    padding: 5px 8px;
+    margin: 5px 0;
+}

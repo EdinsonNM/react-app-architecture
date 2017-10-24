@@ -1,12 +1,13 @@
 import { Observable } from 'rxjs';
 import { combineEpics } from 'redux-observable';
-import { LOGIN_ACTION, AUTH_ACTION } from '../constants/actionTypes';
+import { AUTH_ACTIONS } from '../constants/actionTypes';
 
 function loginEpic(action$) {
-    return action$.ofType(LOGIN_ACTION)
+    return action$.ofType(AUTH_ACTIONS.LOGIN_ACTION)
         .delay(2000)
-        .mapTo({ type: AUTH_ACTION });
+        .mapTo({ type: AUTH_ACTIONS.AUTH_ACTION });
 }
 
-export const rootEpic = combineEpics(loginEpic);
+const rootEpic = combineEpics(loginEpic);
 
+export default rootEpic;

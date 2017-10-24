@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
-const debug = (process.env.NODE_ENV !== 'production');
+const debug = true;
 const config = {
     entry: {
         bundle: [

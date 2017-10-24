@@ -1,0 +1,43 @@
+@import url('../../styles/core.css');
+.CarInsurancecontainer{
+    position: relative;
+}
+.bgHeader{
+    height: 200px;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-pacifico-blue1);
+    z-index: 0;
+
+}
+.steps{
+    margin-top: -180px;
+    top: 0;
+    text-align: center;
+    z-index: 100;
+    padding: 10px;
+}
+.steps ul{
+    list-style: none;
+    display: inline-flex;
+}
+.steps ul li{
+    display: inline-flex;
+    margin: 0;
+    height: 20px;
+}
+
+.circleSteps{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-pacifico-blue4);
+    margin: auto;
+}
+.lineSteps{
+    background-color: var(--color-pacifico-blue4);
+    height: 3px;
+    margin: auto;
+    display: block;
+    width: 20px;
+}

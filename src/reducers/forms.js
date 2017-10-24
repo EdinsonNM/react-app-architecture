@@ -1,10 +1,10 @@
 import {
-    FORM_UPDATE_INPUT_ACTION
+    FORM_ACTIONS
 } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case FORM_UPDATE_INPUT_ACTION:
+        case FORM_ACTIONS.UPDATE_INPUT_ACTION:
             return {
                 ...state,
                 [action.data.id]: action.data.value

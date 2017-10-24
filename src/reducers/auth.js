@@ -1,16 +1,13 @@
-import {
-    LOGIN_ACTION,
-    AUTH_ACTION
-} from '../constants/actionTypes';
+import { AUTH_ACTIONS } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case LOGIN_ACTION:
+        case AUTH_ACTIONS.LOGIN_ACTION:
             return {
                 ...state,
                 inProgress: true,
             };
-        case AUTH_ACTION:
+        case AUTH_ACTIONS.AUTH_ACTION:
             return {
                 ...state,
                 inProgress: false,
