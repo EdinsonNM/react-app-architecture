@@ -2,20 +2,21 @@ import { applyMiddleware, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createEpicMiddleware } from 'redux-observable';
-import { AxiosMiddleware } from './libs/api';
-import reducer from './reducer';
-import { rootEpic } from './epics';
+import { ajax } from 'rxjs/observable/dom/ajax';
+import reducer from './reducers';
+import rootEpic from './epics';
 
-const epicMiddleware = createEpicMiddleware(rootEpic);
+const epicMiddleware = createEpicMiddleware(rootEpic, {
+    dependencies: { ajax }
+});
 const getMiddleware = () => {
     if (process.env.NODE_ENV === 'production') {
-        return applyMiddleware(AxiosMiddleware, epicMiddleware);
+        return applyMiddleware(epicMiddleware);
     }
 
     // Enable additional logging in non-production environments.
-    return applyMiddleware(AxiosMiddleware, epicMiddleware, createLogger());
+    return applyMiddleware(epicMiddleware, createLogger());
 };
-
 const store = createStore(reducer, composeWithDevTools(getMiddleware()));
 
 export default store;

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const WebpackClearConsole = require("webpack-clear-console").WebpackClearConsole;
 
 const debug = (process.env.NODE_ENV !== 'production');
 const config = {
@@ -60,7 +61,7 @@ const config = {
             filename: 'index.html',
             inject: 'body'
         }),
-        new Dotenv({ path: './.env', safe: false })
+        new Dotenv({ path: './.env', safe: false }),
     ],
     devtool: 'source-map'
 };
@@ -69,6 +70,7 @@ if (!debug) {
     config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
+            drop_console: true,
             screw_ie8: true,
             warnings: true,
         },

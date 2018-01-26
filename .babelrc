@@ -10,7 +10,7 @@
         "react-hot-loader/babel" // Enables React code to work with HMR.
     ],
     "env": {
-        "test": {
+        "test": { 
             "plugins": ["transform-es2015-modules-commonjs"]
         }
     }

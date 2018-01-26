@@ -1,0 +1,27 @@
+header.main-header {
+    background: #0091c6 !important;
+    box-shadow: 0 0 1px white !important;
+    height: 45px;
+    z-index: 2;
+}
+
+header.main-header div {
+    min-height: 45px  !important;
+}
+
+header.main-header > div > h2 {
+    color: white !important;
+    font-size: .9em !important;
+    text-transform: uppercase !important;
+    margin: 0 auto !important;
+}
+header.main-header > div > button {
+    width: 28px;
+    height: 28px;
+}
+header.main-header > div > button > span > .icon-nav-back {
+    font-size: 18px !important;
+}
+header.main-header > div > button > span {
+    width: 36px !important;
+}
